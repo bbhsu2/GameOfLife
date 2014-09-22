@@ -7,6 +7,17 @@ type Cell =
     | Alive
     | Dead
 
+let rnd = new Random()
+
+let setBoard = 
+    Array2D.init 10 10 (fun i j ->  
+        match rnd.Next(1,100) with
+        |x when x < 50 -> Alive
+        |_ -> Dead)
+
+let flatten board = 
+    board |> Seq.cast<Cell> |> Seq.toArray
+
 let amount_neighbours (board: Cell[,]) (pos: int * int) =
     let range (n: int) (limit: int) = 
         let min = if n < 1 then 0 else n - 1

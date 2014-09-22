@@ -12,7 +12,7 @@ type AppDelegate() =
     let mutable navigation:UINavigationController = null
 
     override this.FinishedLaunching(app, options) = 
-        let hVC = new NotesViewController()
+        let hVC = new HomeViewController()
         navigation <- new UINavigationController(hVC)
         window.RootViewController <- navigation
         window.MakeKeyAndVisible()
