@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{f2a71f9b-5d33-465a-a702-920d77279786}") = "GameOfLife_iPhone", "GameOfLife_iPhone\GameOfLife_iPhone.fsproj", "{91849063-D5C8-4D43-8D40-2E9B16899C17}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|iPhoneSimulator = Debug|iPhoneSimulator
+		Release|iPhoneSimulator = Release|iPhoneSimulator
+		Debug|iPhone = Debug|iPhone
+		Release|iPhone = Release|iPhone
+		Ad-Hoc|iPhone = Ad-Hoc|iPhone
+		AppStore|iPhone = AppStore|iPhone
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{91849063-D5C8-4D43-8D40-2E9B16899C17}.Ad-Hoc|iPhone.ActiveCfg = Ad-Hoc|iPhone
+		{91849063-D5C8-4D43-8D40-2E9B16899C17}.Ad-Hoc|iPhone.Build.0 = Ad-Hoc|iPhone
+		{91849063-D5C8-4D43-8D40-2E9B16899C17}.AppStore|iPhone.ActiveCfg = AppStore|iPhone
+		{91849063-D5C8-4D43-8D40-2E9B16899C17}.AppStore|iPhone.Build.0 = AppStore|iPhone
+		{91849063-D5C8-4D43-8D40-2E9B16899C17}.Debug|iPhone.ActiveCfg = Debug|iPhone
+		{91849063-D5C8-4D43-8D40-2E9B16899C17}.Debug|iPhone.Build.0 = Debug|iPhone
+		{91849063-D5C8-4D43-8D40-2E9B16899C17}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
+		{91849063-D5C8-4D43-8D40-2E9B16899C17}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{91849063-D5C8-4D43-8D40-2E9B16899C17}.Release|iPhone.ActiveCfg = Release|iPhone
+		{91849063-D5C8-4D43-8D40-2E9B16899C17}.Release|iPhone.Build.0 = Release|iPhone
+		{91849063-D5C8-4D43-8D40-2E9B16899C17}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
+		{91849063-D5C8-4D43-8D40-2E9B16899C17}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = GameOfLife_iPhone\GameOfLife_iPhone.fsproj
+	EndGlobalSection
+EndGlobal
