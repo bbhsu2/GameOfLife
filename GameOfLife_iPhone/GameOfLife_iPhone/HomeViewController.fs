@@ -11,8 +11,8 @@ open GameOfLife
 type HomeViewController() as this=
     inherit UIViewController()
 
-    let viewWidth = 32
-    let viewHeight = 32
+    let viewWidth = 16
+    let viewHeight = 16
 
     let fitnessLabel = new UILabel()
 
@@ -21,13 +21,13 @@ type HomeViewController() as this=
     let workingBoard = ref setBoard
 
     let mutable views = 
-        Array.init 100 (fun x -> new UIView(this.View.Bounds))
+        Array.init 400 (fun x -> new UIView(this.View.Bounds))
     
     let Frames = 
         let rectangles = new List<RectangleF>()
-        for i = 0 to 9 do
-            for j = 0 to 9 do
-                rectangles.Add(new RectangleF(new PointF( float32(viewWidth * j), float32(viewHeight * i + 64)), new SizeF( float32(viewWidth), float32(viewHeight)))) 
+        for i = 0 to 19 do
+            for j = 0 to 19 do
+                rectangles.Add(new RectangleF(new PointF( float32(viewWidth * j), float32(viewHeight * i + 32)), new SizeF( float32(viewWidth), float32(viewHeight)))) 
             done
         done
         rectangles
@@ -59,12 +59,12 @@ type HomeViewController() as this=
                                     printfn "%A" !workingBoard
                                     workingBoard := (lifecycle !workingBoard)
                                     printfn "%A" !workingBoard
-                                    UIView.Animate(float(0.6f),
+                                    UIView.Animate(float(0.2f),
                                                    float(0.0f),
                                                    UIViewAnimationOptions.TransitionNone,
                                                    new NSAction( refreshColors !workingBoard ),
                                                    fun() -> ())
-                                    do! Async.Sleep(700)
+                                    do! Async.Sleep(300)
                                     fitnessLabel.Text <- "Fitness: " + (viewWidth).ToString()} |> Async.StartImmediate))
     
     do

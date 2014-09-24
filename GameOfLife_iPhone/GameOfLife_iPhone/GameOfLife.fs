@@ -1,16 +1,12 @@
 ﻿module GameOfLife
-open System
-open MonoTouch.UIKit
-open MonoTouch.Foundation
 
 type Cell =
     | Alive
     | Dead
 
-let rnd = new System.Random()
-
 let setBoard = 
-    Array2D.init 10 10 (fun i j ->  
+    let rnd = new System.Random()
+    Array2D.init 20 20 (fun i j ->  
         match rnd.Next(1,100) with
         |x when x < 50 -> Alive
         |_ -> Dead)
@@ -35,17 +31,6 @@ let amount_neighbours (board: Cell[,]) (pos: int * int) =
         if (x, y) <> pos && alive board (x, y) then
             yield true
     } |> Seq.length
-//let amount_neighbours (board: Cell[,]) (pos: int * int) =
-//    let range (n: int) (limit: int) = 
-//        let min = if n < 1 then 0 else n - 1
-//        let max = if n > (limit - 2) then (limit - 1) else n + 1
-//        [min .. max]
-//
-//    let x_range = range (fst pos) (Array2D.length1 board)
-//    let y_range = range (snd pos) (Array2D.length2 board)
-//
-//    List.sum [for x in x_range ->
-//        List.sum [for y in y_range -> if board.[x, y] = Alive && (x, y) <> pos then 1 else 0]]
 
 let lifecycle (board: Cell[,]) = 
     Array2D.init (Array2D.length1 board) (Array2D.length2 board) (fun i j ->
@@ -54,8 +39,3 @@ let lifecycle (board: Cell[,]) =
         | 2 -> board.[i,j]
         | 3 -> Alive
         | _ -> Dead)
-//        match (board.[i,j], neighbours) with
-//            | (_, 2) -> Alive//board.[i, j]
-//            | (Alive, 3) -> Alive
-//            | (Dead, 3) -> Alive
-//            | (_, _) -> Dead)
